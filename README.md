@@ -62,6 +62,7 @@ The IoT Scanner is an advanced security tool for smart homes, designed to detect
    python3 -m venv env
    source /env/bin/activate
    python3 IoT-Scanner/scripts/start.py
+```
 
    ```cmd (windows)
    git clone <repository_url>](https://github.com/moulimk/IoT-Vuln-Scanner.git
@@ -69,3 +70,4 @@ The IoT Scanner is an advanced security tool for smart homes, designed to detect
    python3 -m venv env
    source \env\bin\activate.bat
    python3 IoT-Scanner\scripts\start.py
+```
