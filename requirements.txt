@@ -1,0 +1,13 @@
+scapy
+requests
+flask
+sqlalchemy
+pytest
+pandas
+numpy
+tqdm
+scikit-learn
+black
+flake8
+ipython
+psutil

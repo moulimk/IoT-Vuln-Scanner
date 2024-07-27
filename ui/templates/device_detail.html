@@ -1,0 +1,17 @@
+{% extends "sidebar.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Device Details</h1>
+        <table class="u-full-width">
+            <tr><th>IP</th><td>{{ device.ip }}</td></tr>
+            <tr><th>MAC</th><td>{{ device.mac }}</td></tr>
+            <tr><th>Manufacturer</th><td>{{ device.manufacturer }}</td></tr>
+            <tr><th>Total Packets</th><td>{{ device.total_packets }}</td></tr>
+            <tr><th>Total Bytes</th><td>{{ device.total_bytes }}</td></tr>
+            <tr><th>Rate (PPS)</th><td>{{ device.rate_pps }}</td></tr>
+            <tr><th>Rate (BPS)</th><td>{{ device.rate_bps }}</td></tr>
+        </table>
+        <a href="/">Back to device list</a>
+    </div>
+{% endblock %}

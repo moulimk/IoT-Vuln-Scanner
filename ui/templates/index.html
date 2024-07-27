@@ -1,0 +1,30 @@
+{% extends "sidebar.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>IoT Devices</h1>
+        <table class="u-full-width">
+            <thead>
+                <tr>
+                    <th>IP</th>
+                    <th>MAC</th>
+                    <th>Manufacturer</th>
+                </tr>
+            </thead>
+            <tbody id="device-list">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $.getJSON('/devices', function(data) {
+                console.log("Fetched device data:", data);
+                var rows = '';
+                data.forEach(function(device) {
+                    rows += '<tr><td><a href="/device/' + device.ip + '">' + device.ip + '</a></td><td>' + device.mac + '</td><td>' + device.manufacturer + '</td></tr>';
+                });
+                $('#device-list').html(rows);
+            });
+        });
+    </script>
+{% endblock %}

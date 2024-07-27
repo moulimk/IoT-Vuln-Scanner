@@ -1,0 +1,17 @@
+{% extends "sidebar.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Consent Form</h1>
+        <form action="/save_consent" method="post">
+            <p>Do you consent to data collection?</p>
+            <label>
+                <input type="radio" name="consent" value="yes"> Yes
+            </label>
+            <label>
+                <input type="radio" name="consent" value="no"> No
+            </label>
+            <input class="button-primary" type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}
