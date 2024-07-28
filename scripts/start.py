@@ -1,3 +1,5 @@
+# scripts/start.py
+
 import sys
 import os
 from flask import Flask
@@ -81,7 +83,7 @@ def main():
 
     # Start Flask server
     print("Starting Flask server...")
-    app.run(debug=True)
+    app.run(debug=False)
 
 if __name__ == "__main__":
     main()

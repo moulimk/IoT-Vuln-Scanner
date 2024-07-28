@@ -1,3 +1,5 @@
+# ui/device_list.py
+
 from flask import Blueprint, render_template, jsonify, request, redirect
 import pandas as pd
 
@@ -14,8 +16,6 @@ def index():
 
 @device_bp.route('/devices')
 def get_devices():
-    print("Device data being sent to the frontend:")
-    print(devices.to_dict(orient='records'))
     return jsonify(devices.to_dict(orient='records'))
 
 @device_bp.route('/device/<anon_ip>')
@@ -49,8 +49,6 @@ def save_settings():
 def set_devices(device_data):
     global devices
     devices = device_data
-    print("Devices set in set_devices function:")
-    print(devices)
 
 def set_traffic_analyzer(analyzer):
     global traffic_analyzer
