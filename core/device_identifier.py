@@ -5,7 +5,6 @@ class DeviceIdentifier:
         self.oui_data = self.load_oui_data(oui_file)
 
     def load_oui_data(self, oui_file):
-        # Read the IEEE OUI file
         oui_data = []
         with open(oui_file, 'r') as file:
             lines = file.readlines()
@@ -27,9 +26,15 @@ class DeviceIdentifier:
     def identify(self, mac_address):
         oui_prefix = mac_address.lower()[:8]
         organization = self.oui_data[self.oui_data['assignment'] == oui_prefix]['organization_name']
-        return organization.values[0] if not organization.empty else "Unknown"
+        if not organization.empty:
+            return organization.values[0]
+        return "Unknown"
 
-# Example usage:
-# identifier = DeviceIdentifier(oui_file="data/oui.txt")
-# manufacturer = identifier.identify("00:1A:2B:3C:4D:5E")
-# print(manufacturer)
+    def map_to_cpe(self, manufacturer, model=None):
+        # Simplified mapping logic with realistic CPEs
+        cpe_mapping = {
+            "Microsoft": "cpe:2.3:o:microsoft:windows_10:1607",
+            "Apple": "cpe:2.3:o:apple:ios:14.0",
+            # Add more mappings as needed
+        }
+        return cpe_mapping.get(manufacturer, "Unknown")

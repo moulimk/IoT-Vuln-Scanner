@@ -1,5 +1,3 @@
-# scripts/start.py
-
 import sys
 import os
 from flask import Flask
@@ -12,6 +10,7 @@ from core.device_identifier import DeviceIdentifier
 from core.traffic_rate import TrafficRateAnalyzer
 from core.anonymization import DataAnonymizer
 from core.global_stats import GlobalStats
+from core.vulnerability_analysis import VulnerabilityAnalysis
 import ui.device_list as device_list_ui
 from ui.device_list import device_bp, set_devices, set_traffic_analyzer, set_global_stats, set_ip_map
 from ui.consent import consent_bp
@@ -74,6 +73,16 @@ def main():
     set_traffic_analyzer(analyzer)
     set_global_stats(global_stats)
     set_ip_map(original_ip_map)
+
+    # Initialize Vulnerability Analysis
+    print("Initializing Vulnerability Analysis...")
+    vulnerability_analyzer = VulnerabilityAnalysis(api_key="your_gemini_api_key")
+
+    for device in device_df.itertuples():
+        vulnerability_id = device.mac  # Replace with actual logic to get vulnerability ID
+        details, recommendations = vulnerability_analyzer.analyze_vulnerability(vulnerability_id)
+        print(f"Vulnerability details for {device.ip}: {details}")
+        print(f"Security recommendations for {device.ip}: {recommendations}")
 
     # Create Flask app and register blueprints
     app = Flask(__name__, template_folder='../ui/templates')
