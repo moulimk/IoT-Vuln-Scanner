@@ -21,7 +21,7 @@
                 console.log("Fetched device data:", data);
                 var rows = '';
                 data.forEach(function(device) {
-                    rows += '<tr><td><a href="/device/' + device.ip + '">' + device.ip + '</a></td><td>' + device.mac + '</td><td>' + device.manufacturer + '</td></tr>';
+                    rows += '<tr><td><a href="/device/' + device.ip_address + '">' + device.ip_address + '</a></td><td>' + device.mac_address + '</td><td>' + device.manufacturer + '</td></tr>';
                 });
                 $('#device-list').html(rows);
             });

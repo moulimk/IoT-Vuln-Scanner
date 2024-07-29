@@ -1,5 +1,3 @@
-# core/arp_scanner.py
-
 from scapy.all import ARP, Ether, srp
 import pandas as pd
 import psutil

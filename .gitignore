@@ -1,2 +1,7 @@
 env/
 .venv/
+all_devices_vulnerabilities.json
+tests/__pycache__/
+core/__pycache__/
+ui/__pycache__/
+
