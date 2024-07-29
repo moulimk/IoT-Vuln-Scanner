@@ -1,18 +1,22 @@
 import sys
 import os
-from flask import Flask, g
+from flask import Flask
 
 # Add the project directory to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from core.arp_scanner import ARPScanner
 from core.enhanced_device_scanner import EnhancedDeviceScanner
+from core.database import initialize_database
 from ui.device_list import create_device_bp
 
 devices_data = None  # Global variable to store devices data
 
 def main():
     global devices_data
+
+    # Initialize the database
+    initialize_database()
 
     # Prompt user to choose data source
     use_mock = input("Do you want to use mock data? (yes/no): ").strip().lower() == 'yes'
@@ -57,7 +61,7 @@ def main():
     
     # Start Flask server
     print("Starting Flask server...")
-    app.run(debug=True)
+    app.run(debug=False)
 
 if __name__ == "__main__":
     main()

@@ -5,3 +5,5 @@ tests/__pycache__/
 core/__pycache__/
 ui/__pycache__/
 
+
+data/iot_scanner.db

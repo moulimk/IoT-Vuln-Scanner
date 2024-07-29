@@ -7,10 +7,30 @@
             <tr><th>IP</th><td>{{ device.ip_address }}</td></tr>
             <tr><th>MAC</th><td>{{ device.mac_address }}</td></tr>
             <tr><th>Manufacturer</th><td>{{ device.manufacturer }}</td></tr>
-            <tr><th>Total Packets</th><td>{{ device.total_packets }}</td></tr>
-            <tr><th>Total Bytes</th><td>{{ device.total_bytes }}</td></tr>
-            <tr><th>Rate (PPS)</th><td>{{ device.rate_pps }}</td></tr>
-            <tr><th>Rate (BPS)</th><td>{{ device.rate_bps }}</td></tr>
+            <tr><th>Device Type</th><td>{{ device.device_type }}</td></tr>
+        </table>
+        <h2>Vulnerabilities</h2>
+        <table class="u-full-width">
+            <thead>
+                <tr>
+                    <th>CVE ID</th>
+                    <th>Description</th>
+                    <th>Severity</th>
+                    <th>Published Date</th>
+                    <th>Last Modified Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vuln in vulnerabilities %}
+                <tr>
+                    <td>{{ vuln.cve_id }}</td>
+                    <td>{{ vuln.description }}</td>
+                    <td>{{ vuln.severity }}</td>
+                    <td>{{ vuln.published_date }}</td>
+                    <td>{{ vuln.last_modified_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
         <a href="/">Back to device list</a>
     </div>

@@ -1,5 +1,8 @@
+# tests/mock_arp_output.py
+
 mock_arp_output = [
     {
+        "id": 1,
         "mac_address": "00:14:22:01:23:45",
         "ip_address": "192.168.0.10",
         "manufacturer": "Samsung",
@@ -10,6 +13,7 @@ mock_arp_output = [
         ]
     },
     {
+        "id": 2,
         "mac_address": "00:25:9c:cf:1c:ac",
         "ip_address": "192.168.0.11",
         "manufacturer": "Philips",
@@ -19,6 +23,7 @@ mock_arp_output = [
         ]
     },
     {
+        "id": 3,
         "mac_address": "44:65:0d:56:cc:d3",
         "ip_address": "192.168.0.12",
         "manufacturer": "Amazon",
@@ -29,6 +34,7 @@ mock_arp_output = [
         ]
     },
     {
+        "id": 4,
         "mac_address": "18:b4:30:25:7f:3d",
         "ip_address": "192.168.0.13",
         "manufacturer": "Nest",
@@ -39,6 +45,7 @@ mock_arp_output = [
         ]
     },
     {
+        "id": 5,
         "mac_address": "1c:0b:d5:2a:bc:de",
         "ip_address": "192.168.0.14",
         "manufacturer": "Ring",
@@ -49,6 +56,7 @@ mock_arp_output = [
         ]
     },
     {
+        "id": 6,
         "mac_address": "40:b8:37:5b:cf:fe",
         "ip_address": "192.168.0.15",
         "manufacturer": "Netgear",
@@ -59,6 +67,7 @@ mock_arp_output = [
         ]
     },
     {
+        "id": 7,
         "mac_address": "94:10:3e:ac:df:ef",
         "ip_address": "192.168.0.16",
         "manufacturer": "Belkin",
