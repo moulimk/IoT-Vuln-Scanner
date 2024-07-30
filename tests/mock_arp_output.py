@@ -1,5 +1,3 @@
-# tests/mock_arp_output.py
-
 mock_arp_output = [
     {
         "id": 1,

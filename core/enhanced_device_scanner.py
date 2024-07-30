@@ -6,6 +6,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from core.device_identifier import DeviceIdentifier
+from core.database import create_connection
 
 class EnhancedDeviceScanner:
     def __init__(self, oui_file="data/oui.txt"):
@@ -51,7 +52,6 @@ if __name__ == "__main__":
     from core.arp_scanner import ARPScanner
 
     arp_scanner = ARPScanner()
-    arp_scanner.select_interface()
     devices = arp_scanner.scan()
 
     if not devices.empty:

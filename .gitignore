@@ -7,3 +7,5 @@ ui/__pycache__/
 
 
 data/iot_scanner.db
+data/devices.db
+data/history.db

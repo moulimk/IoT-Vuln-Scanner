@@ -1,25 +1,24 @@
 {% extends "sidebar.html" %}
 
 {% block content %}
-<div class="container">
-    <h1>IoT Devices</h1>
-    <table class="u-full-width">
-        <thead>
-            <tr>
-                <th>IP</th>
-                <th>MAC</th>
-                <th>Manufacturer</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for device in devices %}
-            <tr>
-                <td><a href="{{ url_for('device.device_detail', device_id=device.id) }}">{{ device.ip_address }}</a></td>
-                <td>{{ device.mac_address }}</td>
-                <td>{{ device.manufacturer }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+<table>
+    <thead>
+        <tr>
+            <th>IP Address</th>
+            <th>MAC Address</th>
+            <th>Manufacturer</th>
+            <th>Device Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for device in devices %}
+        <tr>
+            <td><a href="{{ url_for('device.device_detail', device_id=device.id) }}">{{ device.ip_address }}</a></td>
+            <td>{{ device.mac_address }}</td>
+            <td>{{ device.manufacturer }}</td>
+            <td>{{ device.device_type }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
