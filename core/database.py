@@ -20,7 +20,7 @@ def create_tables(conn):
             ip_address TEXT,
             mac_address TEXT,
             manufacturer TEXT,
-            device_type TEXT
+            device_type TEXT NOT NULL
         );
         """
         sql_create_vulnerabilities_table = """
@@ -52,12 +52,12 @@ def create_tables(conn):
     except Error as e:
         print(e)
 
-def insert_device(conn, device_type):
+def insert_device(conn, ip_address, mac_address, manufacturer, device_type):
     """Insert a new device into the devices table"""
-    sql = '''INSERT INTO devices(device_type)
-             VALUES(?)'''
+    sql = '''INSERT INTO devices(ip_address, mac_address, manufacturer, device_type)
+             VALUES(?,?,?,?)'''
     cur = conn.cursor()
-    cur.execute(sql, (device_type,))
+    cur.execute(sql, (ip_address, mac_address, manufacturer, device_type))
     conn.commit()
     return cur.lastrowid
 

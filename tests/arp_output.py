@@ -1,19 +1,60 @@
 arp_output = [
     {
-        "mac_address": "00:fe:ed:c0:ff:ee",
-        "ip_address": "10.242.64.1",
+        "mac_address": "52:54:00:12:35:02",
+        "ip_address": "10.0.2.2",
         "manufacturer": "Unknown",
+        "device_type": "Unknown",
         "services": [
-            {
-                "service": "domain",
-                "version": "9.11.4-P2"
-            },
             {
                 "service": "msrpc",
                 "version": ""
             },
             {
                 "service": "microsoft-ds",
+                "version": ""
+            },
+            {
+                "service": "realserver",
+                "version": ""
+            }
+        ]
+    },
+    {
+        "mac_address": "52:54:00:12:35:03",
+        "ip_address": "10.0.2.3",
+        "manufacturer": "Unknown",
+        "device_type": "Unknown",
+        "services": [
+            {
+                "service": "msrpc",
+                "version": ""
+            },
+            {
+                "service": "microsoft-ds",
+                "version": ""
+            },
+            {
+                "service": "realserver",
+                "version": ""
+            }
+        ]
+    },
+    {
+        "mac_address": "52:54:00:12:35:04",
+        "ip_address": "10.0.2.4",
+        "manufacturer": "Unknown",
+        "device_type": "Unknown",
+        "services": [
+            {
+                "service": "msrpc",
+                "version": ""
+            },
+            {
+                "service": "microsoft-ds",
+                "version": ""
+            },
+            {
+                "service": "realserver",
                 "version": ""
             }
         ]

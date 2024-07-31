@@ -35,6 +35,7 @@ class EnhancedDeviceScanner:
                 "mac_address": mac,
                 "ip_address": ip,
                 "manufacturer": manufacturer,
+                "device_type": device.get('device_type', 'Unknown'),  # Handle missing device_type
                 "services": services
             }
             detailed_devices.append(detailed_device)
