@@ -52,7 +52,7 @@ def main():
     json_file_path = 'all_devices_vulnerabilities.json'
     if os.path.exists(json_file_path):
         os.remove(json_file_path)
-    vulnerability_integration()
+    vulnerability_integration(arp_output)
 
     # Populate the database from the JSON file
     populate_database_from_json(json_file_path)
